@@ -1,0 +1,42 @@
+.cart-title{
+	font-size: 24px;
+	color: #F57F17;
+}
+.table img{
+	max-width: 20vh;
+}
+table td{
+	vertical-align: middle!important;
+}
+.table td input{
+	width: 100px;
+}
+.remove-item{
+	background-image: url("images/close-circle.png");
+	background-repeat: no-repeat;
+	background-position: 5px 50%;
+	padding-left: 40px;
+}
+.order-btn{
+	background-image: url("images/checkbox-marked-circle-outline.png");
+	background-repeat: no-repeat;
+	background-position: 5px 50%;
+	padding-left: 40px;
+}
+.submit-btn{
+	margin-bottom: 20px;
+}
+.thank-you{
+	text-align: center;
+	font-weight: 700;
+	font-size: 21px;
+}
+.thank-you .tip{
+	font-size: 15px;
+}
+.orderid{
+	color: #F57F17;
+}
+.btn-buymore{
+  margin: 20px;
+}

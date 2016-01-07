@@ -1,0 +1,30 @@
+.product-img-box img{
+	width: 100%;
+}
+.product-info .product-name{
+	font-size: 25px;
+	font-weight: 700;
+}
+.product-info .old-price span{
+	text-decoration: line-through;
+}
+.product-info .product-price span{
+	font-size: 15px;
+	font-weight: 700;
+	margin: 5px 0px;
+}
+.product-info .product-save{
+	font-size: 12px;
+	color: #F57F17;
+	margin: 5px 0px;
+}
+.qty input{
+	width: 80px;
+}
+.add-to-cart{
+	background-image: url("images/cart-plus.png");
+	background-repeat: no-repeat;
+	background-position: 5px 50%;
+	padding-left: 30px;
+	margin-top: 5px;
+}
