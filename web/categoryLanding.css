@@ -1,26 +1,26 @@
 .leftnav ul{
-	list-style-type:none;
-	padding-left: 20px;
-  padding-right: 20px;
+    list-style-type:none;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .leftnav li{
-	padding-top: 5px;
-	padding-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .left-navigation{
-	background-color: #F7F7F7;
-	border-radius: 5px;
-	padding: 10px;
-	border: 1px solid #F57F17;
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #F57F17;
 }
 .left-navigation a{
-	color: #000;
+    color: #000;
 }
 .left-navigation a:hover{
-	color: #F57F17;
+    color: #F57F17;
 }
 .result-item img{
-	width: 100%;
+    width: 100%;
 }
 .result-item span{
     text-decoration: none;
@@ -40,40 +40,49 @@
     color: #5F1414;
 }
 .product-border{
-	border: 1px solid #F57F17;
-	border-radius: 5px;
-	padding: 7px;
-	margin: 4px;
-  height: 350px;
+    border: 1px solid #F57F17;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 4px;
+    height: 350px;
 }
 .product-border img{
-  max-width: 300px;
+    max-width: 300px;
 }
 .left-navigation>li{
-	padding-bottom: 20px;
-	border-top: 1px solid #cccccc;
+    padding-bottom: 20px;
+    border-top: 1px solid #cccccc;
 }
 .left-navigation>li>a{
-	font-weight: 700;
+    font-weight: 700;
 }
 .danh-muc{
-	border-radius: 5px;
-	color: #FFF;
-	background-color: #F57F17;
-	margin: 10px auto;
-	text-align: center;
-	font-weight: 700;
-	padding: 10px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #F57F17;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+}
+.dang-nhap{
+    background-color: #FBC02D;
+    height: 250px;
+    margin: 20px auto;
+    width: 350px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #F57F17;
 }
 .custom-pagination{
-	clear: both;
+    clear: both;
 }
 .pagination>.active>a,
- .pagination>.active>a:focus,
-  .pagination>.active>a:hover,
-   .pagination>.active>span,
-    .pagination>.active>span:focus,
-     .pagination>.active>span:hover{
-     	background-color: #F57F17;
-     	border-color: #F57F17;
-     }
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover{
+    background-color: #F57F17;
+    border-color: #F57F17;
+}

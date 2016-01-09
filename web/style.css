@@ -282,6 +282,9 @@ hr{
     padding-left: 28px;
     color: #ffffff;  
 }
+.form-control-feedback{
+    width: 150px !important;
+}
 .orange{
   color: orangered;
 }

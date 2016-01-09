@@ -29,7 +29,7 @@
 				        </div>
 				        </form>
 				        <ul class="nav navbar-nav navbar-right">
-				        	<li><a href="category"><div class="account-btn">Tài khoản</div></a></li>
+				        	<li><a href="login"><div class="account-btn">Tài khoản</div></a></li>
                   <li><a href="cartPage"><div class="cart-btn">Giỏ hàng (${sessionScope.cartInfo.counter + 0})</div></a></li>
 				        </ul>
 				        </div>
