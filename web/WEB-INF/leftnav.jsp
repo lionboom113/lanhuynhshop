@@ -11,7 +11,7 @@
 				<ul class = "left-navigation col-md-12">
 					<div class="danh-muc">Danh mục sản phẩm</div>
           <sql:query dataSource="mydatabase" var="result">
-            SELECT * from tbl_category where categoryParent IS NULL;
+            SELECT * from tbl_category where categoryParent IS NULL order by stt ASC;
           </sql:query>
           <sql:query dataSource="mydatabase" var="queryparam">
             SELECT * from tbl_category where categoryId = "${param.id}";
@@ -20,7 +20,7 @@
             <li><a href="category?id=${row.categoryId}">${row.categoryName}</a>
             <c:if test="${row.categoryId == param.id or queryparam.rows[0].categoryParent == row.categoryId or param.rootparent == row.categoryId}">
               <sql:query dataSource="mydatabase" var="subresult">
-                SELECT * from tbl_category where categoryParent = "${row.categoryId}";
+                SELECT * from tbl_category where categoryParent = "${row.categoryId}" order by stt ASC;
               </sql:query>
                 <ul>
               <c:forEach items="${subresult.rows}" var="subrow">

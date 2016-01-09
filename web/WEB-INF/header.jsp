@@ -64,7 +64,7 @@
 				        </li>-->
 <!--query1-->                
                 <sql:query dataSource="mydatabase" var="result">
-                  SELECT * from tbl_category where categoryParent is NULL;
+                  SELECT * from tbl_category where categoryParent is NULL order by stt ASC;
                 </sql:query>
 <!--showresult-->                  
                 <c:forEach var="row" items="${result.rows}">
@@ -76,7 +76,7 @@
                     </sql:query>
                     <c:forEach items="${subresult.rows}" var="subrow">
                       <sql:query dataSource="mydatabase" var="subresult2">
-                        SELECT * from tbl_category where categoryParent = "${subrow.categoryId}";
+                        SELECT * from tbl_category where categoryParent = "${subrow.categoryId}" order by stt ASC;
                       </sql:query>
                         <li <c:if test="${subresult2.rowCount != 0}">class="dropdown-submenu"</c:if>><a href="category?id=${subrow.categoryId}">${subrow.categoryName}</a>
                           <c:if test="${subresult2.rowCount != 0}">
