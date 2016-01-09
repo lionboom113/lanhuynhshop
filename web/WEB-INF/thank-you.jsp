@@ -24,7 +24,7 @@
 		<link rel="stylesheet" href="style.css">	
     <link rel="stylesheet" href="categoryLanding.css">	
     <link rel="stylesheet" href="cart.css">
-    <title>Lan Huỳnh Shop - Giỏ hàng - Chuyên hàng xách tay</title>
+    <title>Lan Huynh Shop - Giỏ hàng - Chuyên hàng xách tay</title>
   </head>
   <body>
     <jsp:include page="WEB-INF/header.jsp"/>
@@ -38,7 +38,7 @@
 				  </div>
 				</div>
 				<div class="container-fluid thank-you" >
-					<p>Cảm ơn bạn đã mua hàng tại Lan Huỳnh Shop. Đơn đặt hàng của bạn đang được xử lý</p>
+					<p>Cảm ơn bạn đã mua hàng tại Lan Huynh Shop. Đơn đặt hàng của bạn đang được xử lý</p>
 					<p>Mã đơn đặt hàng : <span class="orderid">${param.orderid}</span></p>
 					<p class="tip">( Bạn có thể ghi chú lại mã đơn đặt hàng để thuận tiện hơn trong việc liên lạc )</p>
 					<img src="images/thank-you.jpg">

@@ -4,7 +4,7 @@
               auth="Container"
               type="javax.sql.DataSource" 
               username="root" 
-              password="root"
+              password="1234"
               driverClassName="com.mysql.jdbc.Driver"
               url="jdbc:mysql://localhost:3306/lanhuynhshop"
               validationQuery="select 1"

@@ -13,12 +13,12 @@
 		<script src="app.js"></script>
 		<link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cart.css">
-    <title>Lan Huỳnh Shop - Trang chủ - Chuyên hàng xách tay</title>
+    <title>Lan Huynh Shop - Trang chủ - Chuyên hàng xách tay</title>
 	</head>
 	<body>
             <jsp:include page="WEB-INF/header.jsp"/>
             <div class="container-fluid guide" >
-              <p class="title">Hướng dẫn mua hàng tại Lan Huỳnh Shop</p>
+              <p class="title">Hướng dẫn mua hàng tại Lan Huynh Shop</p>
               <p><span class="orange">Bước 1:</span> Chọn sản phẩm mà bạn muốn mua bằng cách click vào hình ảnh của chúng</p>
               <hr/>
               <p><span class="orange">Bước 2:</span> Chọn số lượng muốn mua và click vào nút "Thêm vào giỏ hàng"</p>

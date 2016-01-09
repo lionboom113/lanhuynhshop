@@ -25,7 +25,7 @@
 		<link rel="stylesheet" href="style.css">	
     <link rel="stylesheet" href="categoryLanding.css">	
     <link rel="stylesheet" href="cart.css">
-    <title>Lan Huỳnh Shop - Giỏ hàng - Chuyên hàng xách tay</title>
+    <title>Lan Huynh Shop - Giỏ hàng - Chuyên hàng xách tay</title>
   </head>
   <body>
     <jsp:include page="WEB-INF/header.jsp"/>

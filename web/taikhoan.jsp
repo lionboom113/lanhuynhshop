@@ -13,7 +13,7 @@
 		<script src="app.js"></script>
 		<link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cart.css">
-    <title>Lan Huỳnh Shop - Trang chủ - Chuyên hàng xách tay</title>
+    <title>Lan Huynh Shop - Trang chủ - Chuyên hàng xách tay</title>
 	</head>
 	<body>
             <jsp:include page="WEB-INF/header.jsp"/>

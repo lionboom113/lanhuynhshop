@@ -72,7 +72,7 @@
 				          <a href="category?id=${row.categoryId}" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">${row.categoryName}</a>
 				          <ul class="dropdown-menu">
                     <sql:query dataSource="mydatabase" var="subresult">
-                      SELECT * from tbl_category where categoryParent = "${row.categoryId}";
+                      SELECT * from tbl_category where categoryParent = "${row.categoryId}" order by stt ASC;
                     </sql:query>
                     <c:forEach items="${subresult.rows}" var="subrow">
                       <sql:query dataSource="mydatabase" var="subresult2">
