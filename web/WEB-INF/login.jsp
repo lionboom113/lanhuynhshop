@@ -15,22 +15,23 @@
         <title>Lan Huỳnh Shop - Danh mục - Chuyên hàng xách tay</title>
     </head>
     <body>
+       
         <jsp:include page="WEB-INF/header.jsp"/>
         <div class="row">
             <div class = "dang-nhap">
                 <form action="LoginServlet" id="loginForm">
                     <div class="navbar-brand"><a href="/index"><img id="navbar-logo" src="images/logo.png"/></a></div>
 
-                    <input type="text" name="txtUsername" required class="form-control" placeholder="Username....">
-                    <input type="password" name="txtPassword" required class="form-control" placeholder="Password....">
+                    <input type="text" name="txtUsername" required class="gap form-control" placeholder="Username....">
+                    <input type="password" name="txtPassword" required class="gap form-control" placeholder="Password....">
                     <c:if test="${not empty requestScope.ERROR}" >
                         <p style="color: red" >${requestScope.ERROR}</p>
                     </c:if>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="">Remember me?</label>
+                        <label><input type="checkbox" name="chkRemember" value="">Remember me?</label>
                     </div>
-                    <div id="loginBtn"><button  class="btn btn-warning">Đăng Nhập</button></div>
-                    <a href="register">Đăng ký</a>  <a href="">Quên mật khẩu?</a>  
+                    <div id="loginBtn"><button  class="btn btn-warning center">Đăng Nhập</button></div>
+                    <a style="color: blue" href="register">Đăng ký</a>  <a style="color: blue" href="">Quên mật khẩu?</a>  
 
                 </form>
 
