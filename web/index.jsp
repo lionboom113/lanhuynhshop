@@ -18,25 +18,25 @@
             <jsp:include page="WEB-INF/header.jsp"/>
             <jsp:include page="WEB-INF/hero-slider.jsp"/>	    
             <jsp:include page="WEB-INF/product-slider.jsp">
+                <jsp:param name="id" value="1thuoc"/>
+            </jsp:include>
+            <jsp:include page="WEB-INF/product-slider.jsp">
                 <jsp:param name="id" value="2mypham"/>
-            </jsp:include>
-            <jsp:include page="WEB-INF/product-slider.jsp">
-                <jsp:param name="id" value="4giaydep"/>
-            </jsp:include>
-            <jsp:include page="WEB-INF/product-slider.jsp">
-                <jsp:param name="id" value="6mevabe"/>
-            </jsp:include>
-            <jsp:include page="WEB-INF/product-slider.jsp">
-                <jsp:param name="id" value="5phukien"/>
             </jsp:include>
             <jsp:include page="WEB-INF/product-slider.jsp">
                 <jsp:param name="id" value="3quanao"/>
             </jsp:include>
             <jsp:include page="WEB-INF/product-slider.jsp">
-                <jsp:param name="id" value="7thucpham"/>
+                <jsp:param name="id" value="4giaydep"/>
             </jsp:include>
             <jsp:include page="WEB-INF/product-slider.jsp">
-                <jsp:param name="id" value="1thuoc"/>
+                <jsp:param name="id" value="5phukien"/>
+            </jsp:include>
+            <jsp:include page="WEB-INF/product-slider.jsp">
+                <jsp:param name="id" value="6mevabe"/>
+            </jsp:include>
+            <jsp:include page="WEB-INF/product-slider.jsp">
+                <jsp:param name="id" value="7thucpham"/>
             </jsp:include>
             <jsp:include page="WEB-INF/product-slider.jsp">
                 <jsp:param name="id" value="8saleoff"/>
