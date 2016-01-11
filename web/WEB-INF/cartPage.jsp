@@ -38,10 +38,10 @@
 				    Bước 2: Thông tin cá nhân/ Địa chỉ giao hàng
 				  </div>
 				</div>
-      <c:if test="${empty sessionScope.cartInfo}">
+      <c:if test="${empty sessionScope.cartInfo or empty sessionScope.cartInfo.hashmap}">
             <a href="index" class="btn btn-danger btn-buymore">Bạn chưa có hàng trong giỏ. Hãy thêm hàng vào giỏ trước khi thanh toán</a>
       </c:if>
-      <c:if test="${not empty sessionScope.cartInfo}">
+      <c:if test="${not empty sessionScope.cartInfo and not empty sessionScope.cartInfo.hashmap}">
 				<div class="cart-title">Giỏ hàng (${sessionScope.cartInfo.counter + 0}) - <fmt:formatNumber value="${sessionScope.cartInfo.sum + 0}" type="number" 
                           groupingUsed="true" maxFractionDigits="0" /> đ</div>
 		      <table class="table">
@@ -61,7 +61,7 @@
                   <td>${entry.key.id}</td>
                   <td><img src="https://googledrive.com/host/<%=getServletContext().getInitParameter("gdFolderId")%>/${entry.key.image}"></td>
                   <td>${entry.key.name}</td>
-                  <td><input type="number" class="form-control" value="${entry.value}" min=0></td>
+                  <td><input readonly type="number" class="form-control" value="${entry.value}" min=0></td>
                   <td><fmt:formatNumber value="${entry.value * entry.key.price}" type="number" 
                           groupingUsed="true" maxFractionDigits="0" /> đ</td>
                   <td><button class="btn btn-danger remove-item" data-id="${entry.key.id}">Bỏ khỏi giỏ hàng</button></td>

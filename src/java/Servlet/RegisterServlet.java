@@ -40,7 +40,9 @@ public class RegisterServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             /* TODO output your page here. You may use following sample code. */
             String username = request.getParameter("txtUsername");
+            username = new String(username.getBytes("ISO-8859-1"),"UTF-8");
             String password = request.getParameter("txtPassword");
+            password = new String(password.getBytes("ISO-8859-1"),"UTF-8");
             String action = request.getParameter("action");
 
             DAO dao = new DAO();
@@ -49,7 +51,6 @@ public class RegisterServlet extends HttpServlet {
                     boolean result = dao.checkDuplicateUsername(username.trim());
                     if (result) {
                         out.print("a");
-
                     }
                     return;
                 }

@@ -31,7 +31,7 @@
                         <label><input type="checkbox" name="chkRemember" value="">Remember me?</label>
                     </div>
                     <div id="loginBtn"><button  class="btn btn-warning center">Đăng Nhập</button></div>
-                    <a style="color: blue" href="register">Đăng ký</a>  <a style="color: blue" href="">Quên mật khẩu?</a>  
+                    <a style="color: blue" href="register">Đăng ký</a> | <a style="color: blue" href="">Quên mật khẩu?</a>  
 
                 </form>
 

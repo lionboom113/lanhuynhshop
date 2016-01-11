@@ -12,7 +12,7 @@
   SELECT * from tbl_category where categoryId = "${param.id}";
 </sql:query>
 <sql:query dataSource="mydatabase" var="productresult">
-  SELECT * from tbl_tag where categoryId = "${param.id}" limit 10;
+  SELECT * from tbl_tag where categoryId = "${param.id}" order by productId limit 50;
 </sql:query>
 <div class="category container-fluid" id="cate${param.id}">			
     <div class="category-head">

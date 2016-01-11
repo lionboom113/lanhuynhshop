@@ -78,10 +78,17 @@ public class CartServlet extends HttpServlet {
         if (action.equals("addOrder")){
           DAO dao = new DAO();
           String name = request.getParameter("name");
+          name = new String(name.getBytes("ISO-8859-1"),"UTF-8");
           String phone = request.getParameter("phone");
+          
           String address = request.getParameter("address");
+          address = new String(address.getBytes("ISO-8859-1"),"UTF-8");
           String comment = request.getParameter("comment");
+          comment = new String(comment.getBytes("ISO-8859-1"),"UTF-8");
           String paymenttxt = request.getParameter("payment");
+          if (paymenttxt == null) {
+            paymenttxt = "0";
+          }
           int payment = Integer.parseInt(paymenttxt);
           if (comment == null) comment = "";
           int orderid = dao.addOrder(cart,name,phone,address,comment,payment);
