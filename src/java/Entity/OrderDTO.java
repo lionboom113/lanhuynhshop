@@ -6,13 +6,14 @@
 
 package Entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author Light
  */
-public class OrderDTO {
+public class OrderDTO implements Serializable {
     private int orderId;
     private Date orderDate;
     private String name;

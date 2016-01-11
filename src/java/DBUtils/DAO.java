@@ -401,5 +401,35 @@ public class DAO {
         }
         return false;
     }
-    
+
+    public void updateOrder(int orderid, int status) {
+        Connection con = DBUtils.makeConnection();
+        String sql = "Update tbl_order set status=? where orderid=?";
+        Product product = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        try {
+            pst = (PreparedStatement) con.prepareStatement(sql);
+            pst.setInt(1, status);
+            pst.setInt(2, orderid);
+            pst.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

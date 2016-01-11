@@ -31,6 +31,7 @@
         <label style="font-size: 20px; margin-left: 20px">Thông tin đơn hàng   </label>
         <hr/>
         <div class="container">       
+
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -44,39 +45,52 @@
                 </thead>
                 <tbody>
                     <sql:query dataSource="mydatabase" var="result">
-                        SELECT * from tbl_order where user = "${sessionScope.USER}";
+                        SELECT * from tbl_order;
                     </sql:query>
                     <c:forEach items="${result.rows}" var="row">
                         <tr>
-                            <td>${row.orderid}</td>
-                            <td><fmt:formatDate type="date" value="${row.orderdate}" /></td>
-                            <td>${row.name}</td>
-                            <td>${row.address}</td>
-                            <td>${row.phone}</td>
-                            <td> <c:choose>
-                                    <c:when test="${row.status == 1}" >
-                                        Chưa xác nhận
-                                    </c:when> 
-                                    <c:when test="${row.status == 2}" >
-                                        Đã xác nhận
-                                    </c:when> 
-                                    <c:when test="${row.status == 3}" >
-                                        Đã thanh toán
-                                    </c:when> 
-                                    <c:when test="${row.status == 4}" >
-                                        Đã giao hàng
-                                    </c:when> 
-                                    <c:when test="${row.status == 5}" >
-                                        Đóng
-                                    </c:when> 
-                                </c:choose> </td>
-                        </tr>
+                    <form action="UpdateOrderServlet">
+                        <td>${row.orderid}  </td>
+                        <td><fmt:formatDate type="date" value="${row.orderdate}" /></td>
+                        <td>${row.name}</td>
+                        <td>${row.address}</td>
+                        <td>${row.phone}</td>
+                        <td> <select name="ddlStatus"  >
+                                <option value="1" <c:if test="${row.status == 1}" >
+                                        selected="" 
+                                    </c:if> >Chưa xác nhận</option>
+                                <option value="2" <c:if test="${row.status == 2}" >
+                                        selected="" 
+                                    </c:if> >Đã xác nhận</option>
+                                <option value="3" <c:if test="${row.status == 3}" >
+                                        selected="" 
+                                    </c:if> >Đã thanh toán</option>
+                                <option value="4" <c:if test="${row.status == 4}" >
+                                        selected="" 
+                                    </c:if> >Đã giao hàng</option>
+                                <option value="5" <c:if test="${row.status == 5}" >
+                                        selected="" 
+                                    </c:if> >Đóng</option>
+                            </select>  </td>
+                        <td>
 
-                    </c:forEach>
+                            <input type="hidden" name="txtOrderId" value="${row.orderid}" />
+                            <button class="btn btn-warning order-btn submit-btn right">Lưu</button>
+
+                        </td>
+
+                        </tr>
+                    </form>
+                </c:forEach>
 
                 </tbody>
             </table>
+
+
+
+
         </div>
+
         <jsp:include page="WEB-INF/footer.jsp"/>
     </body>
 </html>

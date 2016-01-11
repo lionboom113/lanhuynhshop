@@ -4,9 +4,17 @@
         <param-name>gdFolderId</param-name>
         <param-value>0BxiyNJDxXz3GcjRZZXhVZmU1V0U</param-value>
     </context-param>
+    <servlet>
+        <servlet-name>UpdateOrderServlet</servlet-name>
+        <servlet-class>Servlet.UpdateOrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Cart</servlet-name>
         <url-pattern>/Cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateOrderServlet</servlet-name>
+        <url-pattern>/UpdateOrderServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -40,7 +48,7 @@
         <servlet-name>AddProductServlet</servlet-name>
         <servlet-class>Servlet.AddProductServlet</servlet-class>
     </servlet>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>AddProductServlet</servlet-name>
         <url-pattern>/AddProductServlet</url-pattern>
     </servlet-mapping>
@@ -56,7 +64,7 @@
         <servlet-name>myPage</servlet-name>
         <jsp-file>/WEB-INF/myPage.jsp</jsp-file>
     </servlet>
-     <servlet>
+    <servlet>
         <servlet-name>AddProduct</servlet-name>
         <jsp-file>/WEB-INF/addProduct.jsp</jsp-file>
     </servlet>
@@ -140,5 +148,4 @@
         <servlet-name>AddProduct</servlet-name>
         <url-pattern>/addProduct</url-pattern>
     </servlet-mapping>
-    
 </web-app>
