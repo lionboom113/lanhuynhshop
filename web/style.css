@@ -285,6 +285,10 @@ hr{
 .form-control-feedback{
     width: 150px !important;
 }
+.update{
+    width: 150px !important;
+    top: 0px !important;
+}
 .orange{
   color: orangered;
 }
@@ -302,7 +306,8 @@ hr{
   font-weight: 700;
 }
 .center{
-    width: 100%;
+    width: 50%;
+    margin: auto;
 }
 .gap{
     margin-bottom: 10px;
