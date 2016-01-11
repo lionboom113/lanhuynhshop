@@ -52,6 +52,10 @@
         <servlet-name>orderPage</servlet-name>
         <jsp-file>/WEB-INF/orderPage.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>myPage</servlet-name>
+        <jsp-file>/WEB-INF/myPage.jsp</jsp-file>
+    </servlet>
      <servlet>
         <servlet-name>AddProduct</servlet-name>
         <jsp-file>/WEB-INF/addProduct.jsp</jsp-file>
@@ -72,9 +76,25 @@
         <servlet-name>register</servlet-name>
         <jsp-file>/WEB-INF/register.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>viewOrder</servlet-name>
+        <jsp-file>/WEB-INF/viewOrder.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>viewOrderAdmin</servlet-name>
+        <jsp-file>/WEB-INF/viewOrderAdmin.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewOrder</servlet-name>
+        <url-pattern>/viewOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewOrderAdmin</servlet-name>
+        <url-pattern>/viewOrderAdmin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>category</servlet-name>
@@ -95,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>orderPage</servlet-name>
         <url-pattern>/orderPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>myPage</servlet-name>
+        <url-pattern>/myPage</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>thank-you</servlet-name>

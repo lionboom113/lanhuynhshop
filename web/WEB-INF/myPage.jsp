@@ -24,48 +24,53 @@
         <link rel="stylesheet" href="style.css">	
         <link rel="stylesheet" href="categoryLanding.css">	
         <link rel="stylesheet" href="cart.css">
-        <title>Lan Huynh Shop - Đăng Ký</title>
+        <title>Lan Huynh Shop - Tài khoản</title>
     </head>
     <body>
         <jsp:include page="WEB-INF/header.jsp"/>
-        <div class="row container-fluid">
+        <div class="row container-fluid center">
             <form class="customerinfo-form" action="RegisterServlet">
-                <div class="form-group">
-                    <label for="name">Tên đăng nhập:</label>
-                    <input type="text" class="form-control" id="username" name="txtUsername" required>
-                    <span id="1" style="display: none" class="form-control-feedback">Nhập tên đăng nhập</span>
-                    <span id="2" style="display: none" class="form-control-feedback">Trùng tên đăng nhập</span>
-                </div>
-                <div class="form-group">
-                    <label for="name">Mật khẩu:</label>
-                    <input type="password" class="form-control" id="password" name="txtPassword" required>
-                    <span style="display: none" class="form-control-feedback">Nhập mật khẩu</span>
-                </div>
+                <label style="font-size: 20px">Thông tin tài khoản   </label>
+                <hr/>
+                <div class="form-horizontal">
 
-                <div class="form-group ">
-                    <label for="name">Nhập lại mật khẩu:</label>   
-                    <input type="password" class="form-control" id="password-check" name="txtCheckPassword" required>
-                    <span style="display: none" class="form-control-feedback">Mật khẩu không khớp</span>
-                </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label">Mật khẩu   </label>
+                        <div class="col-sm-9">
+                            <input type="password" name="txtPassword" class="form-control" id="password" placeholder="">
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="name">Họ và tên:</label>
-                    <input type="text" class="form-control" id="name" name="txtName" required>
-                    <span style="display: none" class="form-control-feedback">Nhập họ và tên</span>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Số điện thoại:</label>
-                    <input type="text" class="form-control" id="phone" name="txtPhone" required>
-                    <span style="display: none" class="form-control-feedback">Nhập số điện thoại</span>
-                </div>
-                <div class="form-group">
-                    <label for="address">Địa chỉ:</label>
-                    <input type="text" class="form-control" id="address" name="txtAddress" required>
-                    <span style="display: none" class="form-control-feedback">Nhập số địa chỉ</span>
+                    <div class="form-group ">
+                        <label for="password-check" class="col-sm-3 control-label">Nhập lại mật khẩu   </label>
+                        <div class="col-sm-9">
+                            <input type="password" name="txtCheckPassword" class="form-control" id="password-check" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="name" class="col-sm-3 control-label">Họ và tên   </label>
+                        <div class="col-sm-9">
+                            <input  type="text" name="txtName" class="form-control" id="name" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="phone" class="col-sm-3 control-label">Số điện thoại  </label>
+                        <div class="col-sm-9">
+                            <input  type="text" name="txtPhone" class="form-control" id="phone" placeholder="">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group ">
+                        <label for="address" class="col-sm-3 control-label">Địa chỉ  </label>
+                        <div class="col-sm-9">
+                            <input  type="text" name="txtAddress" class="form-control" id="address" placeholder="">
+                        </div>
+                    </div>
                 </div>
 
             </form>	
-            <div class="btn btn-warning order-btn submit-btn right">Đăng ký</div>
+            <div class="btn btn-warning order-btn submit-btn right">Lưu</div>
         </div>
         <script>
             $(document).ready(function() {
@@ -211,9 +216,6 @@
             });
 
         </script>
-
         <jsp:include page="WEB-INF/footer.jsp"/>
     </body>
 </html>
-
-

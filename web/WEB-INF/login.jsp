@@ -12,7 +12,7 @@
         <script src="app.js"></script>
         <link rel="stylesheet" href="style.css">	
         <link rel="stylesheet" href="categoryLanding.css">	
-        <title>Lan Huỳnh Shop - Danh mục - Chuyên hàng xách tay</title>
+        <title>Lan Huỳnh Shop - Đăng Nhập</title>
     </head>
     <body>
        
@@ -31,7 +31,7 @@
                         <label><input type="checkbox" name="chkRemember" value="">Remember me?</label>
                     </div>
                     <div id="loginBtn"><button  class="btn btn-warning center">Đăng Nhập</button></div>
-                    <a style="color: blue" href="register">Đăng ký</a>  <a style="color: blue" href="">Quên mật khẩu?</a>  
+                    <a style="margin-left: 10px; color: blue" href="register">Đăng ký</a>  <a style="color: blue" href="">Quên mật khẩu?</a>  
 
                 </form>
 
