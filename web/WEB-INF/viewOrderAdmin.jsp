@@ -75,7 +75,7 @@
                         <td>
 
                             <input type="hidden" name="txtOrderId" value="${row.orderid}" />
-                            <button class="btn btn-warning order-btn submit-btn right">Lưu</button>
+                            <button class="btn btn-warning order-btn submit-btn right">Lưu thay đổi</button>
 
                         </td>
 
