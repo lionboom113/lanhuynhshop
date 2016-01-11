@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="style.css">	
         <link rel="stylesheet" href="categoryLanding.css">	
         <link rel="stylesheet" href="cart.css">
-        <title>Lan Huỳnh Shop - Đăng Ký</title>
+        <title>Lan Huynh Shop - Đăng Ký</title>
     </head>
     <body>
         <jsp:include page="WEB-INF/header.jsp"/>

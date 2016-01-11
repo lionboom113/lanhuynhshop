@@ -8,7 +8,6 @@ package Servlet;
 import DBUtils.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URLDecoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,16 +38,16 @@ public class AddProductServlet extends HttpServlet {
       String action = request.getParameter("action");
       String category = request.getParameter("category");
       String id = request.getParameter("id");
-      // String name = request.getParameter("name");
-      String name = URLDecoder.decode(request.getParameter("name"), "UTF-8");
-      System.out.println(name);
+      String name = request.getParameter("name");
+      name = new String(name.getBytes("ISO-8859-1"),"UTF-8");
       String price = request.getParameter("price");
       String oldPrice = request.getParameter("oldPrice");
-//      String description = request.getParameter("description");
-      String description = URLDecoder.decode(request.getParameter("description"), "UTF-8");
-      System.out.println(description);
+      String description = request.getParameter("description");
+      description = new String(description.getBytes("ISO-8859-1"),"UTF-8");
+      System.out.println("encoded:"+description);
       if (description.equals("")) {
-        description = "Hiện tại chưa có mô tả cho sản phẩm, liên hệ trực tiếp để biết thêm chi tiếtf";
+        description = "Hiện tại chưa có mô tả cho sản phẩm, liên hệ trực tiếp để biết thêm chi tiết";
+      System.out.println(description);
       }
       String image = request.getParameter("image");
       if (image.equals("")) {
@@ -81,12 +80,10 @@ public class AddProductServlet extends HttpServlet {
 
       if ((false == dao.isProductIDDuplicated(id)) && dao.isCategoryExisted(category)) {
         int orderid;
-
         orderid = dao.addProduct(category, id, name, dPrice, dOldPrice, description, image);
 
         if (orderid == 1) {
           out.print("Thêm sản phẩm thành công");
-          System.out.println("Thêm sản phẩm thành công");
         } else {
           out.print("Thêm sản phẩm thất bại, vui lòng liên hệ với Admin");
         }

@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="style.css">	
     <link rel="stylesheet" href="categoryLanding.css">	
     <link rel="stylesheet" href="cart.css">
-    <title>Lan Huỳnh Shop - Đăng ký thành công</title>
+    <title>Lan Huynh Shop - Đăng ký thành công</title>
   </head>
   <body>
     <jsp:include page="WEB-INF/header.jsp"/>

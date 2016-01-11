@@ -12,7 +12,7 @@
         <script src="app.js"></script>
         <link rel="stylesheet" href="style.css">	
         <link rel="stylesheet" href="categoryLanding.css">	
-        <title>Lan Huỳnh Shop - Danh mục - Chuyên hàng xách tay</title>
+        <title>Lan Huynh Shop - Danh mục - Chuyên hàng xách tay</title>
     </head>
     <body>
        
