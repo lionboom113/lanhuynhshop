@@ -135,7 +135,12 @@ public class DAO {
             pst.setNString(1, id);
             pst.setNString(2, name);
             pst.setDouble(3, price);
-            pst.setDouble(4, oldPrice);
+            if (oldPrice == 0) {
+              pst.setNull(4, java.sql.Types.DOUBLE);
+            } else
+            {
+              pst.setDouble(4, oldPrice);
+            }
             pst.setNString(5, description);
             pst.setNString(6, image);
             pst.executeUpdate();

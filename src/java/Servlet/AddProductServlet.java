@@ -47,7 +47,6 @@ public class AddProductServlet extends HttpServlet {
       System.out.println("encoded:"+description);
       if (description.equals("")) {
         description = "Hiện tại chưa có mô tả cho sản phẩm, liên hệ trực tiếp để biết thêm chi tiết";
-      System.out.println(description);
       }
       String image = request.getParameter("image");
       if (image.equals("")) {
