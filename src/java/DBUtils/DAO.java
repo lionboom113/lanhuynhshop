@@ -120,19 +120,23 @@ public class DAO {
 
     public int addProduct(String categoryId, String id, String name, double price, double oldPrice, String description, String image) {
         Connection con = DBUtils.makeConnection();
-        String sql = "Insert into tbl_product(productId, productName, productPrice, productOldPrice, productDescription, productImage) VALUES(?,?,?,?,?,?)";
+        String sql;
         PreparedStatement pst = null;
         ResultSet rs = null;
         int isProductAdded = 0; //0 is false, 1 is true
         System.out.println("Thêm sản phẩm thành công");
         try {
+//            sql = "SET NAMES 'utf8'";
+//            pst = (PreparedStatement) con.prepareStatement(sql);
+//            pst.execute();
+            sql = "Insert into tbl_product(productId, productName, productPrice, productOldPrice, productDescription, productImage) VALUES(?,?,?,?,?,?)";
             pst = (PreparedStatement) con.prepareStatement(sql);
-            pst.setString(1, id);
-            pst.setString(2, name);
+            pst.setNString(1, id);
+            pst.setNString(2, name);
             pst.setDouble(3, price);
             pst.setDouble(4, oldPrice);
-            pst.setString(5, description);
-            pst.setString(6, image);
+            pst.setNString(5, description);
+            pst.setNString(6, image);
             pst.executeUpdate();
             sql = "SELECT LAST_INSERT_ID()";
             pst = (PreparedStatement) con.prepareStatement(sql);

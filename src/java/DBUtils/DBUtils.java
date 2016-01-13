@@ -6,6 +6,7 @@
 package DBUtils;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,9 @@ public  class DBUtils {
       xmlContext = (Context) ic.lookup("java:comp/env");
       ds = (DataSource) xmlContext.lookup("mydatabase");
       con = ds.getConnection();
+      PreparedStatement pst = con.prepareStatement("SET NAMES 'utf8'");
+      pst.execute();
+      pst.close();
     } catch (NamingException ex) {
       ex.printStackTrace();
     } catch (SQLException ex) {
