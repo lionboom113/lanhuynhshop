@@ -26,10 +26,15 @@
         <link rel="stylesheet" href="cart.css">
         <title>Lan Huynh Shop - Đơn hàng</title>
     </head>
+    <c:if test="${!sessionScope.ROLE}">
+        <jsp:forward page="/index"/>
+    </c:if>
     <body>
         <jsp:include page="WEB-INF/header.jsp"/>
         <label style="font-size: 20px; margin-left: 20px">Thông tin đơn hàng   </label>
         <hr/>
+
+
         <div class="container">       
 
             <table class="table table-striped">
@@ -40,13 +45,42 @@
                         <th>Họ và tên</th>
                         <th>Địa chỉ</th>
                         <th>Điện thoại</th>
-                        <th>Trạng thái</th>
-                    </tr>
+                        <th> <form id="filter" action="viewOrderAdmin">
+                    <select name="orderid" class="" id="ddlStatus">
+                        <option value="" <c:if test="${empty param.orderid}">
+                                selected="" 
+                            </c:if> >Trạng thái</option>
+                        <option value="1" <c:if test="${param.orderid == 1}" >
+                                selected="" 
+                            </c:if> >Chưa xác nhận</option>
+                        <option value="2" <c:if test="${param.orderid == 2}" >
+                                selected="" 
+                            </c:if> >Đã xác nhận</option>
+                        <option value="3" <c:if test="${param.orderid == 3}" >
+                                selected="" 
+                            </c:if> >Đã thanh toán</option>
+                        <option value="4" <c:if test="${param.orderid == 4}" >
+                                selected="" 
+                            </c:if> >Đã giao hàng</option>
+                        <option value="5" <c:if test="${param.orderid == 5}" >
+                                selected="" 
+                            </c:if> >Đóng</option>
+                    </select>
+                </form>
+                </th>
+                </tr>
                 </thead>
                 <tbody>
-                    <sql:query dataSource="mydatabase" var="result">
-                        SELECT * from tbl_order;
-                    </sql:query>
+                    <c:if test="${empty param.orderid}">
+                        <sql:query dataSource="mydatabase" var="result">
+                            SELECT * from tbl_order;
+                        </sql:query>
+                    </c:if>
+                    <c:if test="${not empty param.orderid}">
+                        <sql:query dataSource="mydatabase" var="result">
+                            SELECT * from tbl_order where status=${param.orderid};
+                        </sql:query>
+                    </c:if>
                     <c:forEach items="${result.rows}" var="row">
                         <tr>
                     <form action="UpdateOrderServlet">
@@ -90,7 +124,15 @@
 
 
         </div>
-
         <jsp:include page="WEB-INF/footer.jsp"/>
     </body>
 </html>
+<script>
+    $(document).ready(function() {
+        $("#ddlStatus").change(reload);
+
+    });
+    function reload() {
+        $("#filter").submit();
+    }
+</script>

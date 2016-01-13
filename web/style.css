@@ -278,7 +278,6 @@ hr{
 .account-btn{
     background-image: url("images/account.png");
     background-repeat: no-repeat;
-    border-radius: 5px;
     padding-left: 28px;
     color: #ffffff;  
 }

@@ -31,8 +31,19 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <c:if test="${not empty sessionScope.USER}"><li><a href="myPage"><div class="account-btn"> ${sessionScope.USER}</div></a></li></c:if>
-                    <c:if test="${empty sessionScope.USER}" ><li><a href="login"><div class="account-btn"> Tài khoản </div></a></li> </c:if> 
+                    <c:if test="${not empty sessionScope.USER}">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"><div class="account-btn">${sessionScope.USER}</div></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="myPage" >Thông tin tài khoản</a>
+                                <li><a href="ViewOrderServlet" >Thông tin đơn hàng</a>
+                                <li><a href="SignOutServlet" >Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </c:if>
+
+                    <c:if test="${empty sessionScope.USER}" ><li><a href="login"><div class="account-btn"> Đăng nhập </div></a></li> </c:if> 
                     <li><a href="cartPage"><div class="cart-btn">Giỏ hàng (${sessionScope.cartInfo.counter + 0})</div></a></li>
                 </ul>
             </div>
