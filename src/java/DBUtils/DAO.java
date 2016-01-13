@@ -436,4 +436,32 @@ public class DAO {
         }
     }
 
+    public boolean checkAdmin(String username) {
+        Connection con = DBUtils.makeConnection();
+        String sql = "SELECT * FROM tbl_account WHERE username=?";
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        try {
+            pst = (PreparedStatement) con.prepareStatement(sql);
+            pst.setString(1, username);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                return rs.getBoolean("isAdmin");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (pst != null) {
+                    pst.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }
