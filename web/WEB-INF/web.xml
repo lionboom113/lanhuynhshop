@@ -4,9 +4,17 @@
         <param-name>gdFolderId</param-name>
         <param-value>0BxiyNJDxXz3GcjRZZXhVZmU1V0U</param-value>
     </context-param>
+    <servlet>
+        <servlet-name>UpdateOrderServlet</servlet-name>
+        <servlet-class>Servlet.UpdateOrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Cart</servlet-name>
         <url-pattern>/Cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateOrderServlet</servlet-name>
+        <url-pattern>/UpdateOrderServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -53,6 +61,10 @@
         <jsp-file>/WEB-INF/orderPage.jsp</jsp-file>
     </servlet>
      <servlet>
+        <servlet-name>myPage</servlet-name>
+        <jsp-file>/WEB-INF/myPage.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>AddProduct</servlet-name>
         <jsp-file>/WEB-INF/addProduct.jsp</jsp-file>
     </servlet>
@@ -72,9 +84,25 @@
         <servlet-name>register</servlet-name>
         <jsp-file>/WEB-INF/register.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>viewOrder</servlet-name>
+        <jsp-file>/WEB-INF/viewOrder.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>viewOrderAdmin</servlet-name>
+        <jsp-file>/WEB-INF/viewOrderAdmin.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewOrder</servlet-name>
+        <url-pattern>/viewOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewOrderAdmin</servlet-name>
+        <url-pattern>/viewOrderAdmin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>category</servlet-name>
@@ -97,6 +125,10 @@
         <url-pattern>/orderPage</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>myPage</servlet-name>
+        <url-pattern>/myPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>thank-you</servlet-name>
         <url-pattern>/thank-you</url-pattern>
     </servlet-mapping>
@@ -116,5 +148,4 @@
         <servlet-name>AddProduct</servlet-name>
         <url-pattern>/addProduct</url-pattern>
     </servlet-mapping>
-    
 </web-app>
