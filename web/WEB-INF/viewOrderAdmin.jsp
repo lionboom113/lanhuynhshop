@@ -20,6 +20,7 @@
         <script src="resources/swiper.jquery.min.js"></script>					
         <script src="app.js"></script>
         <script src="resources/bootstrap-submenu.js"></script>
+              <script src="jasny-bootstrap.js"></script>
         <link rel="stylesheet" href="resources/bootstrap-submenu.min.css">
         <link rel="stylesheet" href="style.css">	
         <link rel="stylesheet" href="categoryLanding.css">	
@@ -37,7 +38,7 @@
 
         <div class="container">       
 
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Mã đơn hàng</th>
@@ -70,7 +71,7 @@
                 </th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody data-link="row" class="rowlink">
                     <c:if test="${empty param.orderid}">
                         <sql:query dataSource="mydatabase" var="result">
                             SELECT * from tbl_order;
@@ -84,7 +85,7 @@
                     <c:forEach items="${result.rows}" var="row">
                         <tr>
                     <form action="UpdateOrderServlet">
-                        <td>${row.orderid}  </td>
+                        <td><a href="orderDetail?orderid=${row.orderid}" > ${row.orderid} </a>  </td>
                         <td><fmt:formatDate type="date" value="${row.orderdate}" /></td>
                         <td>${row.name}</td>
                         <td>${row.address}</td>
@@ -130,7 +131,7 @@
 <script>
     $(document).ready(function() {
         $("#ddlStatus").change(reload);
-
+        $('tbody.rowlink').rowlink();
     });
     function reload() {
         $("#filter").submit();

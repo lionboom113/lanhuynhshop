@@ -15,11 +15,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" href="resources/bootstrap.min.css">
         <link rel="stylesheet" href="resources/swiper.min.css">
+        <link href="css/jasny-bootstrap.css" rel="stylesheet" media="screen">
         <script src="resources/jquery.min.js"></script>
         <script src="resources/bootstrap.min.js"></script>						 
         <script src="resources/swiper.jquery.min.js"></script>					
         <script src="app.js"></script>
         <script src="resources/bootstrap-submenu.js"></script>
+        <script src="jasny-bootstrap.js"></script>
         <link rel="stylesheet" href="resources/bootstrap-submenu.min.css">
         <link rel="stylesheet" href="style.css">	
         <link rel="stylesheet" href="categoryLanding.css">	
@@ -31,7 +33,7 @@
         <label style="font-size: 20px; margin-left: 20px">Thông tin đơn hàng   </label>
         <hr/>
         <div class="container">       
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Mã đơn hàng</th>
@@ -64,7 +66,7 @@
                 </th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody data-link="row" class="rowlink">
                     <c:if test="${empty param.orderid}">
                         <sql:query dataSource="mydatabase" var="result">
                             SELECT * from tbl_order;
@@ -77,7 +79,7 @@
                     </c:if>
                     <c:forEach items="${result.rows}" var="row">
                         <tr>
-                            <td>${row.orderid}</td>
+                            <td><a href="orderDetail?orderid=${row.orderid}" > ${row.orderid}</a></td>
                             <td><fmt:formatDate type="date" value="${row.orderdate}" /></td>
                             <td>${row.name}</td>
                             <td>${row.address}</td>
@@ -110,8 +112,10 @@
     </body>
 </html>
 <script>
+     $('tbody.rowlink').rowlink();
     $(document).ready(function() {
         $("#ddlStatus").change(reload);
+       
 
     });
     function reload() {
