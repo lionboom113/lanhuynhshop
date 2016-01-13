@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="productLanding.css">
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="addProductStyle.css">
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'#description',
+              plugins: "image",
+              image_caption: true });
+    </script>
     <title>Thêm sản phẩm</title>
   </head>
   <body>
@@ -47,7 +52,7 @@
         <input type="number" max="99999999" class="form-control" id="oldPrice" name="oldPrice">
       </div>
       <div class="form-group">
-        <label for="comment">Mô tả sản phẩm:</label>
+        <label for="comment" id="lbDes">Mô tả sản phẩm:</label>
         <textarea class="form-control" rows="5" id="description" name="description"></textarea>
       </div>
       <div class="form-group">
@@ -97,6 +102,7 @@
   }
 
   $(".addProduct-btn").click(function () {
+    tinyMCE.triggerSave();
     $.ajax({
       method: "GET",
       url: "AddProductServlet",
@@ -124,6 +130,7 @@
     $("#id").blur(validate2);
   });
   $(document).ready(function () {
+    
     $("#category").blur(validate1);
   });
 
