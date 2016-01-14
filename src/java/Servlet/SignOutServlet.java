@@ -3,27 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Servlet;
 
-import DBUtils.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.apache.catalina.Session;
 
 /**
  *
  * @author Light
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "Signout", urlPatterns = {"/Signout"})
+public class SignOutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,30 +36,10 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("txtUsername");
-            String password = request.getParameter("txtPassword");
-            String[] remember = request.getParameterValues("chkRemember");
-
-            DAO dao = new DAO();
-            if (dao.checkLogin(username.trim(), password.trim()) == true) {
-                if (remember != null) {
-                    Cookie cookie = new Cookie(username, password);
-                    cookie.setMaxAge(60 * 5);
-                    response.addCookie(cookie);
-                }
-                HttpSession session = request.getSession(true);
-                boolean rs = dao.checkAdmin(username);
-                session.setAttribute("ROLE", rs);
-                session.setAttribute("USER", username.trim());
-                response.sendRedirect("index");
-            } else {
-                String error = "Sai tên đăng nhập hoặc mật khẩu";
-                request.setAttribute("ERROR", error);
-                RequestDispatcher rd = request.getRequestDispatcher("login");
-                rd.forward(request, response);
-            }
-
+            HttpSession session = request.getSession(false);
+            session.removeAttribute("USER");
+            session.removeAttribute("ROLE");
+            response.sendRedirect("index");
         } finally {
             out.close();
         }

@@ -9,6 +9,10 @@
         <servlet-class>Servlet.UpdateOrderServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SignOutServlet</servlet-name>
+        <servlet-class>Servlet.SignOutServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>ViewOrderServlet</servlet-name>
         <servlet-class>Servlet.ViewOrderServlet</servlet-class>
     </servlet>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ViewOrderServlet</servlet-name>
         <url-pattern>/ViewOrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignOutServlet</servlet-name>
+        <url-pattern>/SignOutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

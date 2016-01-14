@@ -30,22 +30,34 @@
         <jsp:include page="WEB-INF/header.jsp"/>
         <label style="font-size: 20px; margin-left: 20px">Thông tin đơn hàng   </label>
         <hr/>
+
         <div class="container">       
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>Mã sản phẩm</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên sản phẩm</th>
                         <th>Số lượng</th>
+                        <th>Tổng giá</th>
                     </tr>
                 </thead>
                 <tbody>
                     <sql:query dataSource="mydatabase" var="result">
-                        SELECT * from tbl_orderline where orderid=${param.orderid};
+                        SELECT tbl_product.productId AS productid, tbl_product.productName AS productname, tbl_orderline.qty,  tbl_product.productImage , tbl_orderline.qty* tbl_product.productPrice AS total
+                        FROM tbl_orderline
+                        INNER JOIN tbl_product
+                        ON tbl_product.productId=tbl_orderline.productid
+                        AND tbl_orderline.orderid = ${param.orderid};
                     </sql:query>
                     <c:forEach items="${result.rows}" var="row">
                         <tr>
                             <td>${row.productid}</td>
+                            <td><img src="https://googledrive.com/host/<%=getServletContext().getInitParameter("gdFolderId")%>/${row.productImage}"></td>
+                            <td>${row.productname}</td>
                             <td>${row.qty}</td>
+                            <td><fmt:formatNumber value="${row.total}" type="number" 
+                                              groupingUsed="true" maxFractionDigits="0" /> đ</td>
                         </tr>
 
                     </c:forEach>
